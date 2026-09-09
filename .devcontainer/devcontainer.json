@@ -1,5 +1,24 @@
 {
     "name": "Universal - Latest",
-    "image": "mcr.microsoft.com/devcontainers/universal:latest"
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "features": {
+        "ghcr.io/stu-bell/devcontainer-features/python:0": {
+            "apt_get": true,
+            "installTools": true,
+            "min_python_version": "3.15"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.debugpy",
+                "ms-python.python"
+            ]
+        }
+    }
     
+    {
+        "postCreateCommand": "bash .devcontainer/postCreate.sh"
+    }
+
 }
